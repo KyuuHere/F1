@@ -137,6 +137,51 @@ animation: fadeIn 1s forwards;
 }
 
 
+table{
+  width:80%;
+  margin:20px auto;
+  border-collapse: collapse;
+  border: 2px solid #E10600;
+}
+th,td{
+  padding: 12px 20px;
+  text-align:center;
+}
+th{
+  background-color:#E10600;
+  color:#fff;
+  font-size: 1.2rem;
+}
+td{
+  background-color: #333;
+}
+tr:nth-child(even){
+  background-color: #444;
+}
+tr:hover{
+  background-color: #555;
+}
+.hidden{
+  display: none;
+}
+
+button{
+  padding:12px 24px;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color:#E10600;
+  border: none;
+  border-radius:5px;
+  cursor:pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+button:hover{
+  background-color: #c10500;
+}
+
+
+
 
 @keyframes fadeIn {
   to {
