@@ -138,6 +138,14 @@
   
   
   
+h3{
+  margin: top 0;
+  color: #c70000;
+}
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
   @keyframes fadeIn {
     to {
       opacity: 1;
