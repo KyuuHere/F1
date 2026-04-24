@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F1 Admin - Správa databáze</title>
+  <link rel="stylesheet" href="/style/admin.css">
+  <script src="/Java/admin.js" defer></script>
+</head>
+<body>
+  <div class="nadpis">
+    <img src="/obrazky/F1-Logo.png" alt="F1 logo" class="logo-left">
+    <img src="/obrazky/F1-Logo2.png" alt="F1 logo 2" class="logo-right">
+    <button id="logoutButton" class="logout-button">Odhlásit se</button>
+  </div>
+
+  <header>
+    <h2>Správa F1 databáze</h2>
+    <p class="subtitle"></p>
+    <nav class="main-nav">
+      <a class="nav-link" href="/html/index.html">Hlavní</a>
+      <a class="nav-link" href="/html/vysledky.html">Výsledky</a>
+      <a class="nav-link" href="/html/tabulky.html">Tabulky</a>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    <section class="card">
+      <h3>Inicializace databáze</h3>
+      <button id="initDatabase" class="action-button">Spustit /php/init_db.php</button>
+      <p id="initStatus" class="status">Databáze není připravena nebo byla odstraněna.</p>
+    </section>
+
+    <section class="card">
+      <h3>Přidat jezdce</h3>
+      <form id="driverForm">
+        <div class="field-group">
+          <label for="driverName">Jméno jezdce</label>
+          <input id="driverName" name="name" type="text" required>
+        </div>
+        <div class="field-group">
+          <label for="driverTeam">Tým</label>
+          <input id="driverTeam" name="team" type="text" required>
+        </div>
+        <div class="field-group">
+          <label for="driverPoints">Body</label>
+          <input id="driverPoints" name="points" type="number" min="0" required>
+        </div>
+        <button type="submit" class="action-button">Přidat jezdce</button>
+        <p id="driverStatus" class="status"></p>
+      </form>
+    </section>
+
+    <section class="card">
+      <h3>Přidat tým</h3>
+      <form id="teamForm">
+        <div class="field-group">
+          <label for="teamName">Jméno týmu</label>
+          <input id="teamName" name="name" type="text" required>
+        </div>
+        <div class="field-group">
+          <label for="teamPoints">Body</label>
+          <input id="teamPoints" name="points" type="number" min="0" required>
+        </div>
+        <button type="submit" class="action-button">Přidat tým</button>
+        <p id="teamStatus" class="status"></p>
+      </form>
+    </section>
+
+    <section class="card">
+      <h3>Přidat výsledek závodu</h3>
+      <form id="resultForm">
+        <div class="field-group">
+          <label for="resultRace">Závod</label>
+          <input id="resultRace" name="race" type="text" required>
+        </div>
+        <div class="field-group">
+          <label for="resultDate">Datum</label>
+          <input id="resultDate" name="date" type="date" required>
+        </div>
+        <div class="field-group">
+          <label for="resultCircuit">Okruh</label>
+          <input id="resultCircuit" name="circuit" type="text" required>
+        </div>
+        <div class="field-group">
+          <label for="resultWinner">Vítěz</label>
+          <input id="resultWinner" name="winner" type="text" required>
+        </div>
+        <div class="field-group">
+          <label for="resultPole">Pole position</label>
+          <input id="resultPole" name="pole" type="text" required>
+        </div>
+        <div class="field-group">
+          <label for="resultFastest">Nejrychlejší kolo</label>
+          <input id="resultFastest" name="fastest_lap" type="text" required>
+        </div>
+        <button type="submit" class="action-button">Přidat výsledek</button>
+        <p id="resultStatus" class="status"></p>
+      </form>
+    </section>
+
+    <p class="note">Tato stránka používá nové PHP soubory v <code>/php/</code> pro vkládání dat do SQLite databáze.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 F1 - Správa databáze</p>
+  </footer>
+</body>
+</html>

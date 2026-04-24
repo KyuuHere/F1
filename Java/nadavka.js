@@ -1,52 +1,58 @@
-const drivers2025 = [
-    { name: " Lando Norris ", team: " McLaren", points: 423 }
-];
+document.addEventListener('DOMContentLoaded', () => {
+    const driversBody = document.querySelector('#driversT tbody');
+    const teamsBody = document.querySelector('#teamsT tbody');
+    const fastestBody = document.querySelector('#fastest tbody');
+    const status = document.getElementById('tableStatus');
 
-const teams2025 = [
-    { team: " McLaren", points: 800 }
-];
+    if (!driversBody || !teamsBody || !fastestBody) {
+        return;
+    }
 
-// mělo by to doplnit tabulku drivers(snad)
-const driversT = document.getElementById("driversT");
-drivers2025.sort((a, b) => b.points - a.points);
+    status.textContent = 'Načítám data z databáze...';
 
-drivers2025.forEach((driver, index) => {
-    driversT.innerHTML += `
-        <tr>
-            <td>${index + 1}</td>
-            <td>${driver.name }</td>
-            <td>${driver.team }</td>
-            <td>${driver.points }</td>
-        </tr>
-    `;
+    fetch('/api/standings.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                status.textContent = 'Chyba při načítání dat: ' + data.error;
+                return;
+            }
+
+            driversBody.innerHTML = '';
+            teamsBody.innerHTML = '';
+            fastestBody.innerHTML = '';
+
+            data.drivers.forEach((driver, index) => {
+                driversBody.innerHTML += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${driver.name}</td>
+                        <td>${driver.team}</td>
+                        <td>${driver.points}</td>
+                    </tr>`;
+            });
+
+            data.teams.forEach((team, index) => {
+                teamsBody.innerHTML += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${team.name}</td>
+                        <td>${team.points}</td>
+                    </tr>`;
+            });
+
+            data.fastest.forEach(lap => {
+                fastestBody.innerHTML += `
+                    <tr>
+                        <td>${lap.race}</td>
+                        <td>${lap.driver}</td>
+                        <td>${lap.time}</td>
+                    </tr>`;
+            });
+
+            status.textContent = 'Data byla úspěšně načtena.';
+        })
+        .catch(() => {
+            status.textContent = 'Nelze načist data, pravděpodobně vybouchla databaze.';
+        });
 });
-
-// mělo by to doplnit tabulku teams(snad)
-const teamsT = document.getElementById("teamsT");
-teams2025.sort((a, b) => b.points - a.points);
-
-teams2025.forEach((team, index) => {
-    teamsT.innerHTML += `
-        <tr>
-            <td>${index + 1 }</td>
-            <td>${team.team }</td>
-            <td>${team.points }</td>
-        </tr>
-    `;
-});
-
-const fastest2025=[
-       { race: "Bahrain", driver: "Max Verstappen", time:" 1:32.456" }
-];
-
-// mělo by to doplnit tabulku kol (snad)
-const fastest=document.getElementById("fastest");
-fastest2025.forEach(lap=>{
-   fastest.innerHTML +=`
-        <tr>
-            <td>${lap.race }</td>
-            <td>${lap.driver }</td>
-            <td>${lap.time }</td>
-        </tr>
-    `;
-})

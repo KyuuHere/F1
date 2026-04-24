@@ -1,0 +1,12 @@
+<?php
+session_start();
+
+header('Content-Type: application/json; charset=utf-8');
+
+// Destroy session
+session_destroy();
+
+echo json_encode([
+    'status' => 'ok',
+    'message' => 'Odhlášeni.', 
+]);

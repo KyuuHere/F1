@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F1 Admin - Přihlášení</title>
+  <link rel="stylesheet" href="/style/login.css">
+  <script src="/Java/login.js" defer></script>
+</head>
+<body>
+  <div class="nadpis">
+    <img src="/obrazky/F1-Logo.png" alt="F1 logo" class="logo-left">
+    <img src="/obrazky/F1-Logo2.png" alt="F1 logo 2" class="logo-right">
+  </div>
+
+  <main class="login-container">
+    <div class="login-card">
+      <h1>Přihlášení do administrace</h1>
+      <p class="subtitle">Zadej přihlašovací údaje</p>
+
+      <form id="loginForm">
+        <div class="field-group">
+          <label for="username">Uživatelské jméno</label>
+          <input id="username" name="username" type="text" placeholder="admin" required autofocus>
+        </div>
+
+        <div class="field-group">
+          <label for="password">Heslo</label>
+          <input id="password" name="password" type="password" placeholder="••••••" required>
+        </div>
+
+        <button type="submit" class="login-button">Přihlásit se</button>
+        <p id="loginStatus" class="status"></p>
+      </form>
+
+      <p class="footer-note">Návrat na <a href="/html/index.html" class="footer-link">hlavní stránku</a></p>
+    </div>
+  </main>
+</body>
+</html>

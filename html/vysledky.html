@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>F1 2025</title>
   <link rel="stylesheet" href="/style/vysledky.css">
-<script src="/Java/roblox.js" defer></script>
+  <script src="/Java/vysledky.js" defer></script>
 </head>
 <body>
   <div class="nadpis">
@@ -15,22 +15,42 @@
   <header>
     <h2>F1 2025</h2>
     <p class="subtitle">
-      <a href="/html/index.html" class="subtitle-link">•Hlavni</a>  
+      <a href="/html/index.html" class="subtitle-link">•Hlavní</a>
       <a href="/html/tabulky.html" class="subtitle-link">•Tabulky</a>
     </p>
-
-  
   </header>
 
-<section class="results">
-  <iframe src="https://1racing.co/widget/f1" style="width:100%;max-width:300px;height:580px;"></iframe>
+  <main class="page-content">
+    <section class="results-table">
+      <h3>Sezónní výsledky závodů</h3>
+      <table id="raceResults">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Závod</th>
+            <th>Datum</th>
+            <th>Okruh</th>
+            <th>Vítěz</th>
+            <th>Pole position</th>
+            <th>Nejrychlejší kolo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data načteno z databáze -->
+        </tbody>
+      </table>
+      <p id="resultsStatus" class="status">Načítám výsledky z databáze...</p>
+      <p class="note">Pokud databáze ještě není vytvořená, otevřete <code>/php/init_db.php</code> jednou v prohlížeči.</p>
+    </section>
 
-</section>
+    <section class="widget-section">
+      <h3>Oficiální F1 widget</h3>
+      <iframe src="https://1racing.co/widget/f1" title="F1 widget" class="widget-frame"></iframe>
+    </section>
+  </main>
 
-<footer>
-  <p>&copy; 2025 F1 - Výsledky a statistiky</p>
-</footer>
-
-
+  <footer>
+    <p>&copy; 2025 F1 - Výsledky a statistiky</p>
+  </footer>
 </body>
 </html>
