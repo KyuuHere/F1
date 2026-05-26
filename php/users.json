@@ -1,0 +1,22 @@
+[
+    {
+        "username": "admin",
+        "password": "$2y$10$.4lkQiyAZ0Oyl5UUw0z4AO5NZEnpYeIjbXdGNqGhL7/yzi0Euf00G",
+        "role": "admin"
+    },
+    {
+        "username": "superadmin",
+        "password": "$2y$10$vmxvJKFmljBwG0149OO4aO3vgnvMg53P8.2Ve.S43fJPJOwBXHMtq",
+        "role": "superadmin"
+    },
+    {
+        "username": "databasemaster",
+        "password": "$2y$10$wEVviDoeqLSw1smvMfstnu1vy4YqYgEOvWR14r1rf7r6WvYFHOWL.",
+        "role": "databasemaster"
+    },
+    {
+        "username": "roblox",
+        "password": "$2y$10$B/dq587yfPoqTBaYzjWk6.FXTYobizluTz/7fCP28/uPz8W5gCV.W",
+        "role": "admin"
+    }
+]
