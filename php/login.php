@@ -28,6 +28,17 @@ if ($username === $valid_username && $password === $valid_password) {
     echo json_encode([
         'status' => 'ok',
         'message' => 'Úspěšně přihlášen.',
+        'role' => 'admin',
+    ]);
+} elseif ($username === 'databasemaster' && $password === 'databasemaster') {
+    $_SESSION['databasemaster_logged_in'] = true;
+    $_SESSION['databasemaster_username'] = $username;
+    $_SESSION['login_time'] = time();
+    
+    echo json_encode([
+        'status' => 'ok',
+        'message' => 'Úspěšně přihlášen.',
+        'role' => 'databasemaster',
     ]);
 } else {
     http_response_code(401);

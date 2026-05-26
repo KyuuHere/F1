@@ -1,6 +1,11 @@
 <?php
-$dbFile = __DIR__ . '/../data/f1.sqlite';
+$dbHost = '127.0.0.1';
+$dbPort = 3306;
+$dbName = 'roblox';
+$dbUser = 'root';
+$dbPass = '';
 
+// Připojí se k MySQL databázi roblox a vrátí PDO spojení.
 function getDatabase(): PDO
 {
     static $db = null;
@@ -8,13 +13,13 @@ function getDatabase(): PDO
         return $db;
     }
 
-    global $dbFile;
+    global $dbHost, $dbPort, $dbName, $dbUser, $dbPass;
 
-    if (!file_exists($dbFile)) {
-        throw new RuntimeException('Database file not found. Run /api/init_db.php first.');
-    }
+    $dsn = sprintf('mysql:host=%s;port=%d;dbname=%s;charset=utf8mb4', $dbHost, $dbPort, $dbName);
+    $db = new PDO($dsn, $dbUser, $dbPass, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ]);
 
-    $db = new PDO('sqlite:' . $dbFile);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $db;
 }

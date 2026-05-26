@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loginStatus.style.color = '#ccc';
 
         try {
-            const response = await fetch('/php/login.php', {
+            const response = await fetch('./php/login-api.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),
@@ -34,9 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             loginStatus.textContent = 'Úspěšně přihlášen! Přesměrovávám...';
             loginStatus.style.color = '#4ade80';
-            
+
             setTimeout(() => {
-                window.location.href = '/html/admin.html';
+                const role = data.role || (username === 'databasemaster' ? 'databasemaster' : 'admin');
+                if (role === 'databasemaster') {
+                    window.location.href = './database.php';
+                } else {
+                    window.location.href = './admin.php';
+                }
             }, 800);
         } catch (error) {
             loginStatus.textContent = 'Chyba při přihlášení: ' + error.message;

@@ -12,6 +12,46 @@ body {
   line-height: 1.5;
 }
 
+p {
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+header p {
+  margin-bottom: 10px;
+  color: #d1d1d1;
+}
+
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  margin: 10px auto 16px;
+  background: rgba(225, 16, 0, 0.15);
+  border: 1px solid rgba(225, 16, 0, 0.3);
+  border-radius: 999px;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffdcdc;
+  max-width: fit-content;
+}
+
+header p:first-of-type {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #ffefef;
+}
+
+.subtitle {
+  color: #bbb;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
 .nadpis {
   position: fixed;
   top: 0;
@@ -152,6 +192,40 @@ input:focus {
 .action-button:hover {
   transform: translateY(-1px);
   background: #ff1f1f;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-top: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+thead {
+  background: rgba(225, 16, 0, 0.08);
+}
+
+th,
+td {
+  padding: 12px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+  text-align: left;
+}
+
+th {
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.small-button {
+  padding: 8px 14px;
+  font-size: 0.85rem;
 }
 
 .status,

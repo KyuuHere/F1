@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!tableBody) return;
 
-    fetch('/php/results.php')
+    fetch('./php/results.php')
         .then(response => response.json())
         .then(data => {
             if (!data.results) {

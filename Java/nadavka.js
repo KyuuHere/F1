@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     status.textContent = 'Načítám data z databáze...';
 
-    fetch('/api/standings.php')
+    fetch('./php/standings.php')
         .then(response => response.json())
         .then(data => {
             if (data.error) {
