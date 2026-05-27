@@ -1,6 +1,5 @@
 <?php
-session_start();
-?>
+session_start(); ?>
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -18,7 +17,7 @@ session_start();
 
 <header>
     <h2>Formule 1 – Sezóna 2025</h2>
-    <p class="subtitle">Průběžné pořadí a statistiky z databáze</p>
+    <p class="subtitle">Průběžné pořadí a statistiky</p>
     <nav class="main-nav">
         <a class="nav-link" href="./index.php">Hlavní</a>
         <a class="nav-link" href="./vysledky.php">Výsledky</a>

@@ -1,6 +1,5 @@
 <?php
-session_start();
-?>
+session_start(); ?>
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -16,11 +15,13 @@ session_start();
     <img src="./obrazky/F1-Logo2.png" alt="F1Logo2" class="logo-right">
   </div>
   <header>
-    <h2>F1 2025</h2>
-    <p class="subtitle">
-      <a href="./index.php" class="subtitle-link">•Hlavní</a>
-      <a href="./tabulky.php" class="subtitle-link">•Tabulky</a>
-    </p>
+      <h2>Formule 1 – Sezóna 2025</h2>
+      <p class="subtitle">Průběžné pořadí a statistiky</p>
+      <nav class="main-nav">
+          <a class="nav-link" href="./index.php">Hlavní</a>
+          <a class="nav-link" href="./tabulky.php">Tabulky</a>
+      </nav>
+  </header>
   </header>
 
   <main class="page-content">
