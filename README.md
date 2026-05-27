@@ -41,6 +41,12 @@ database se schovava v db.php je tam cesta k sqlite souboru¨
 
 je to ošetřené tak že když v URL změní např na admin.php tak ho to přesměruje na login.php a musí se přihlasit
 
+## Přihlašeni
+- `admin/admin` – Zakladní správa tabulek, dokaže upravovat data, tod vše.
+- `superadmin/superadmin` – Umí to co admin ale dokaže přidávat/upravovat další adminy
+- `databasemaster/databasemaster` – databasemaster - Je tam jenom tlačitko na "opravu" database
+  
+
 ## Hlavní části
 - `index.php` – úvodní stránka
 - `vysledky.php` – veřejná stránka s výsledky závodů
